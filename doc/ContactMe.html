@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+</head>
+
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_MMga99JDxI" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <br>
+    <form name="feedback">
+        <p>
+            <!--Ask user for their name-->
+            First Name*: <input type="text" name="fname" placeholder="anonymous" required>
+            Last Name*: <input type="text" name="lname" placeholder="anonymous" required>
+            <br> <br>
+            <!--Ask user for their email-->
+            Email*: <input type="email" name="mail" placeholder="name@domain.com" required>
+            <br> <br>
+            <!---->
+            Please enter today's date: <br>
+            <input type="date" name="dateselection">
+            <br> <br>
+            <!---->
+            Would you recommmend this website?
+            <br>
+            <input type="radio" name="question1" value="y">yes
+            <input type="radio" name="question1" value="n">no
+            <br> <br>
+            <!---->
+            Please select your favorite cars: <br>
+            <input type="checkbox" name="favcars" value="Ford"> Ford <br>
+            <input type="checkbox" name="favcars" value="Chevy"> Chevy <br>
+            <input type="checkbox" name="favcars" value="Honda"> Honda <br>
+            <input type="checkbox" name="favcars" value="Toyota"> Toyota <br>
+            <input type="checkbox" name="favcars" value="VW"> VW <br>
+            <!---->
+            Please select your favorite website:
+            <br>
+            <select size="3" name="favwebsite">
+                <option value="None" selected>None of these</option>
+                <option value="Google">Google</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Time">Time</option>
+                <option value="Yahoo">Yahoo</option>
+                <option value="USCA">USCA</option>
+            </select>
+            <br> <br>
+            <!---->
+            Please rate the website from 1-10.
+            <br>
+            <input type="range" name="rating" min="1" max="10">
+            <br> <br>
+            <!---->
+            Please write any additional comments here. <br>
+            <textarea name="comments" cols="50" rows="10">
+                </textarea>
+            <br> <br>
+            <!---->
+            <input type="submit" name="submit">
+            <input type="reset" name="reset" onclick="alert('Your form has been reset')">
+            <br>
+            * = required
+        </p>
+    </form>
+</body>
+
+</html>
