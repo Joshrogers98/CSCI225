@@ -20,24 +20,24 @@
             <!--Ask user for their email-->
             Email*: <input type="email" name="mail" placeholder="name@domain.com" required>
             <br> <br>
-            <!---->
+            <!--Ask user to input the date-->
             Please enter today's date: <br>
             <input type="date" name="dateselection">
             <br> <br>
-            <!---->
+            <!--Ask user if they would recommend this website-->
             Would you recommmend this website?
             <br>
             <input type="radio" name="question1" value="y">yes
             <input type="radio" name="question1" value="n">no
             <br> <br>
-            <!---->
+            <!--Ask user which cars they like-->
             Please select your favorite cars: <br>
             <input type="checkbox" name="favcars" value="Ford"> Ford <br>
             <input type="checkbox" name="favcars" value="Chevy"> Chevy <br>
             <input type="checkbox" name="favcars" value="Honda"> Honda <br>
             <input type="checkbox" name="favcars" value="Toyota"> Toyota <br>
             <input type="checkbox" name="favcars" value="VW"> VW <br>
-            <!---->
+            <!--Ask user which website they like best-->
             Please select your favorite website:
             <br>
             <select size="3" name="favwebsite">
@@ -50,20 +50,21 @@
                 <option value="USCA">USCA</option>
             </select>
             <br> <br>
-            <!---->
+            <!--Ask user for a rating of the website 1-10-->
             Please rate the website from 1-10.
             <br>
             <input type="range" name="rating" min="1" max="10">
             <br> <br>
-            <!---->
+            <!--Ask user for comments-->
             Please write any additional comments here. <br>
             <textarea name="comments" cols="50" rows="10">
                 </textarea>
             <br> <br>
-            <!---->
+            <!--User can submit or reset thier form-->
             <input type="submit" name="submit">
             <input type="reset" name="reset" onclick="alert('Your form has been reset')">
             <br>
+            <!--Let user know that areas marked with * are required-->
             * = required
         </p>
     </form>
