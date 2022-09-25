@@ -1,0 +1,339 @@
+/*
+=======================================
+CSCI225 Website by Joshua Rogers
+=======================================
+01 color
+02 layout
+03 font
+04 other decoration
+*/
+
+/*
+=========
+01 color
+=========
+*/
+
+div.navbar {
+    background-color: aqua;
+}
+
+div.introduction {
+    background-color: darkblue;
+}
+
+div.assignment {
+    background-color: aquamarine;
+}
+
+div.portfolio {
+    background-color: cornflowerblue;
+}
+
+div.contact {
+    background-color: darkcyan;
+}
+
+div.schedule {
+    background-color: dodgerblue;
+}
+
+footer {
+    background-color: blue;
+}
+
+li {
+    background-color: beige;
+}
+
+h1 {
+    background-color: lightseagreen;
+}
+
+#portp1{
+    background-color: indianred;
+}
+
+/*
+==========
+02 layout
+==========
+*/
+/*Fixed Positions*/
+div.navbar,
+div.introduction,
+footer {
+    position: fixed;
+}
+
+/*Absolute positions*/
+div.assignment,
+div.portfolio,
+div.contact,
+div.schedule {
+    position: absolute;
+}
+
+/* Navigation Bar*/
+div.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+}
+
+#navlist li {
+    display: inline-block;
+    margin: auto 3%;
+    padding: 5px;
+    width: 10%;
+    height: 10%;
+}
+
+/*Intro*/
+div.introduction {
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    margin-bottom: 3px;
+    z-index: 999;
+}
+
+#introhead {
+    width: 12%;
+}
+
+#intropara {
+    float: left;
+    width: 60%;
+}
+
+#catpic {
+    float: right;
+    height: 100%;
+    width: 20%;
+}
+
+/*Assignment*/
+div.assignment {
+    left: 80%;
+    top: 20%;
+    width: 14.8%;
+    height: 42%;
+    margin-top: 6px;
+    margin-left: 3px;
+}
+
+#asgnlist li {
+    float: right;
+    padding: 5px 50px;
+    margin: 10px;
+    display: grid;
+    width: 35%;
+    height: auto;
+}
+
+#asgnhead{
+    width: 70%;
+}
+
+/*Portfolio*/
+div.portfolio {
+    top: 20%;
+    left: 0;
+    width: 80%;
+    height: 30%;
+    margin-top: 6px;
+}
+
+#porthead{
+    width: 12%;
+}
+
+#portlist li{
+    width: 10%;
+    padding: 2px;
+}
+
+#portp1{
+    width: 30%;
+}
+
+/*Contact Info*/
+div.contact {
+    top: 50%;
+    left: 0;
+    width: 80%;
+    height: 15%;
+    margin-top: 9px;
+}
+
+#conthead{
+    width: 22.5%;
+}
+
+#contlist li{
+    width: 8%;
+    padding: 2px;
+}
+
+/*Schedule*/
+div.schedule {
+    top: 65%;
+    left: 0;
+    width: 80%;
+    height: 50%;
+    margin-top: 12px;
+}
+
+#schedhead{
+    width: 10%;
+}
+
+/*Copyright*/
+footer {
+    bottom: 0;
+    left: 45%;
+    width: 10%;
+    height: 3%;
+}
+
+/*
+=========
+03 Font
+=========
+*/
+/*Paragraphs*/
+p {
+    font-family: 'Playfair Display', sans-serif;
+    color: beige;
+    line-height: 125%;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+/*Lists*/
+ul,
+ol {
+    color: darkslategrey;
+    font-size: 1.1em;
+    font-weight: 250em;
+    list
+}
+
+#navlist li {
+    text-align: center;
+}
+
+/*H1 Headers*/
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+}
+
+/*Links*/
+a {
+    text-decoration: none;
+}
+
+/*Links-Hover*/
+a:hover {
+    color: white;
+}
+
+/*
+====================
+04 Other Decoration
+====================
+*/
+/*Background*/
+body {
+    background-image: url(../img/skybackground.png);
+    background-size: 100%;
+}
+
+/*Main Blocks*/
+div.portfolio,
+div.contact,
+div.schedule,
+div.assignment {
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+/*Top Block*/
+div.introduction {
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+/*Rounded Corners to li elements*/
+li {
+    border-radius: 25px;
+    margin: 10px;
+}
+
+/*Rounded Corners to H1 elements*/
+h1 {
+    border-radius: 25px;
+
+}
+
+/*Special Style (To first letter of a paragraph)*/
+p::first-letter{
+    font-weight: 700;
+    font-size: 1em;
+}
+
+/*Box Shadow for first paragraph (Portfolio)*/
+#portp1{
+    box-shadow: 5px 10px red;
+}
+
+/*style table with CSS*/
+#tableschedule{
+    border: black solid 2px;
+    font-size: 0.9em;
+    width: 75%;
+    margin-left: 10%;
+    border-spacing: 3px;
+    empty-cells: hide;
+}
+
+#tableschedule tr.thead{
+    background-color: chartreuse;
+    height: 5%;
+}
+
+#tableschedule tr,#tableschedule td{
+    border: black solid 1px;
+    vertical-align: top;
+    text-align: center;
+    padding: 5px;
+    spacing
+}
+
+#tableschedule td{
+    width: 10%;
+}
+
+#tableschedule tr.even{
+    background-color: cornflowerblue;
+}
+
+/*h1 transition*/
+h1{
+    transition-property: color;
+}
+
+h1:hover{
+    background-color: #fff;
+    color: lightseagreen;
+    transition-delay: 250ms;
+}
