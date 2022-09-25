@@ -101,7 +101,7 @@ div.introduction {
 }
 
 #introhead {
-    width: 12%;
+    display: none;
 }
 
 #intropara {
