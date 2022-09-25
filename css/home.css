@@ -218,8 +218,7 @@ ul,
 ol {
     color: darkslategrey;
     font-size: 1.1em;
-    font-weight: 250em;
-    list
+    font-weight: 250;
 }
 
 #navlist li {
@@ -316,7 +315,6 @@ p::first-letter{
     vertical-align: top;
     text-align: center;
     padding: 5px;
-    spacing
 }
 
 #tableschedule td{
