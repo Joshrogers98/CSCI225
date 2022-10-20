@@ -79,25 +79,25 @@ div.navbar {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5%;
+    height: 10%;
     z-index: 999;
 }
 
 #navlist li {
     display: inline-block;
-    margin: auto 3%;
-    padding: 5px;
-    width: 10%;
-    height: 10%;
+    margin: auto 1%;
+    padding: 1%;
+    width: 15%;
+    height: 3%;
 }
 
 /*Intro*/
 div.introduction {
-    top: 5%;
+    top: 10%;
     left: 0;
     width: 100%;
     height: 15%;
-    margin-bottom: 3px;
+    margin-bottom: 1%;
     z-index: 999;
 }
 
@@ -120,16 +120,16 @@ div.introduction {
 div.assignment {
     left: 80%;
     top: 20%;
-    width: 14.8%;
-    height: 42%;
-    margin-top: 6px;
-    margin-left: 3px;
+    width: 15%;
+    height: 45%;
+    margin-top: 2.1%;
+    margin-left: 0.1%;
 }
 
 #asgnlist li {
     float: right;
-    padding: 5px 50px;
-    margin: 10px;
+    padding: 1% 5%;
+    margin: 3%;
     display: grid;
     width: 35%;
     height: auto;
@@ -137,28 +137,33 @@ div.assignment {
 
 #asgnhead{
     width: 70%;
+    margin: 10%;
 }
 
 /*Portfolio*/
 div.portfolio {
     top: 20%;
-    left: 0;
+    left: 0%;
     width: 80%;
     height: 30%;
-    margin-top: 6px;
+    margin-top: 2%;
 }
 
 #porthead{
+    margin-left: 2%;
+    margin-top: 2%;
     width: 12%;
 }
 
 #portlist li{
     width: 10%;
-    padding: 2px;
+    padding: 0.1%;
+    margin: 0.5%;
 }
 
 #portp1{
     width: 30%;
+    height: 30%;
 }
 
 /*Contact Info*/
@@ -167,16 +172,18 @@ div.contact {
     left: 0;
     width: 80%;
     height: 15%;
-    margin-top: 9px;
+    margin-top: 2.1%;
 }
 
 #conthead{
     width: 22.5%;
+    margin-left: 2%;
 }
 
 #contlist li{
     width: 8%;
-    padding: 2px;
+    padding: 0.1%;
+    margin: 1%;
 }
 
 /*Schedule*/
@@ -185,11 +192,12 @@ div.schedule {
     left: 0;
     width: 80%;
     height: 50%;
-    margin-top: 12px;
+    margin-top: 2.2%;
 }
 
 #schedhead{
     width: 10%;
+    margin-left: 2%;
 }
 
 /*Copyright*/
@@ -198,6 +206,7 @@ footer {
     left: 45%;
     width: 10%;
     height: 3%;
+    margin-bottom: .1%;
 }
 
 /*
@@ -276,7 +285,7 @@ div.introduction {
 /*Rounded Corners to li elements*/
 li {
     border-radius: 25px;
-    margin: 10px;
+    margin: 2%;
 }
 
 /*Rounded Corners to H1 elements*/
@@ -302,7 +311,7 @@ p::first-letter{
     font-size: 0.9em;
     width: 75%;
     margin-left: 10%;
-    border-spacing: 3px;
+    border-spacing: 0.25%;
     empty-cells: hide;
 }
 
@@ -315,7 +324,7 @@ p::first-letter{
     border: black solid 1px;
     vertical-align: top;
     text-align: center;
-    padding: 5px;
+    padding: 0.25%;
 }
 
 #tableschedule td{
@@ -335,4 +344,9 @@ h1:hover{
     background-color: #fff;
     color: lightseagreen;
     transition-delay: 250ms;
+}
+
+/*list image*/
+li{
+    list-style-image: url(../img/star.png);
 }
