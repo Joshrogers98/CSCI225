@@ -79,21 +79,21 @@ div.navbar {
     top: 0;
     left: 0;
     width: 100%;
-    height: 10%;
+    height: 5%;
     z-index: 999;
 }
 
 #navlist li {
     display: inline-block;
     margin: auto 1%;
-    padding: 1%;
-    width: 15%;
-    height: 3%;
+    padding: 0.25%;
+    width: 17%;
+    height: 5%;
 }
 
 /*Intro*/
 div.introduction {
-    top: 10%;
+    top: 5%;
     left: 0;
     width: 100%;
     height: 15%;
@@ -119,7 +119,7 @@ div.introduction {
 /*Assignment*/
 div.assignment {
     left: 80%;
-    top: 20%;
+    top: 15%;
     width: 15%;
     height: 45%;
     margin-top: 2.1%;
@@ -142,7 +142,7 @@ div.assignment {
 
 /*Portfolio*/
 div.portfolio {
-    top: 20%;
+    top: 15%;
     left: 0%;
     width: 80%;
     height: 30%;
@@ -168,7 +168,7 @@ div.portfolio {
 
 /*Contact Info*/
 div.contact {
-    top: 50%;
+    top: 45%;
     left: 0;
     width: 80%;
     height: 15%;
@@ -188,7 +188,7 @@ div.contact {
 
 /*Schedule*/
 div.schedule {
-    top: 65%;
+    top: 60%;
     left: 0;
     width: 80%;
     height: 50%;
@@ -238,7 +238,7 @@ ol {
 /*H1 Headers*/
 h1 {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.5%;
 }
 
 /*Footer*/
@@ -302,7 +302,7 @@ p::first-letter{
 
 /*Box Shadow for first paragraph (Portfolio)*/
 #portp1{
-    box-shadow: 5px 10px red;
+    box-shadow: 2px 4px red;
 }
 
 /*style table with CSS*/
