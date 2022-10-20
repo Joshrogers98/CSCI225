@@ -191,7 +191,7 @@ div.schedule {
     top: 60%;
     left: 0;
     width: 80%;
-    height: 50%;
+    height: 75%;
     margin-top: 2.2%;
 }
 
@@ -309,6 +309,7 @@ p::first-letter{
 #tableschedule{
     border: black solid 2px;
     font-size: 0.9em;
+    max-height: 60%;
     width: 75%;
     margin-left: 10%;
     border-spacing: 0.25%;
