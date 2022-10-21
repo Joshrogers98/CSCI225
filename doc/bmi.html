@@ -116,7 +116,7 @@
                 } else {
                     if (ageCheck != 0) {
                         var bmifinal = parseFloat((wt / Math.pow(ht, 2)) * 703).toFixed(2);
-                        printBMI.innerHTML = "Your BMI is: " + bmifinal + "!";
+                        printBMI.innerHTML = "Your BMI is: " + bmifinal + "! <br> Your weight: " + wt + "lbs. <br>Your height: " + ht + "in.";
                         bmi = bmifinal;
                     } else {
                         printBMI.textContent = "Please select an age";
