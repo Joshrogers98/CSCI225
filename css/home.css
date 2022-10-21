@@ -50,7 +50,7 @@ h1 {
     background-color: lightseagreen;
 }
 
-li p{
+li p {
     background-color: indianred;
 }
 
@@ -72,13 +72,14 @@ div.assignment {
 }
 
 /*fixed container*/
-div.fixed-container{
+div.fixed-container {
     top: 0;
     left: 0;
     z-index: 99;
     height: 250px;
     width: 100%;
 }
+
 /* Navigation Bar*/
 div.navbar {
     width: 100%;
@@ -133,29 +134,31 @@ div.assignment {
     width: 50%;
 }
 
-#asgnhead{
+#asgnhead {
     width: auto;
     margin-left: 5%;
 }
+
 /*content container*/
-div.content-container{
+div.content-container {
     top: 250px;
     width: 80%;
     left: 0;
     padding-bottom: 40px;
 }
+
 /*Portfolio*/
 div.portfolio {
     height: auto;
     padding-top: 1px;
 }
 
-#porthead{
+#porthead {
     margin-left: 5%;
     width: auto;
 }
 
-#portlist li{
+#portlist li {
     padding: 0.1%;
     margin: 0.5%;
     width: 40%;
@@ -167,12 +170,12 @@ div.contact {
     height: auto;
 }
 
-#conthead{
+#conthead {
     margin-left: 5%;
     width: auto;
 }
 
-#contlist li{
+#contlist li {
     padding: 0.1%;
     margin: 1%;
     width: 20%;
@@ -184,7 +187,7 @@ div.schedule {
     height: auto;
 }
 
-#schedhead{
+#schedhead {
     width: auto;
     margin-left: 5%;
 }
@@ -283,20 +286,20 @@ h1 {
 }
 
 /*Special Style (To first letter of a paragraph)*/
-p::first-letter{
+p::first-letter {
     font-weight: 700;
     font-size: 1em;
 }
 
 /*Box Shadow for first paragraph (Portfolio)*/
-li p{
+li p {
     margin: 10px;
     box-shadow: 2px 4px red;
     width: auto;
 }
 
 /*style table with CSS*/
-#tableschedule{
+#tableschedule {
     border: black solid 2px;
     font-size: 0.9em;
     max-height: 60%;
@@ -306,38 +309,39 @@ li p{
     empty-cells: hide;
 }
 
-#tableschedule tr.thead{
+#tableschedule tr.thead {
     background-color: chartreuse;
     height: 5%;
 }
 
-#tableschedule tr,#tableschedule td{
+#tableschedule tr,
+#tableschedule td {
     border: black solid 1px;
     vertical-align: top;
     text-align: center;
     padding: 0.25%;
 }
 
-#tableschedule td{
+#tableschedule td {
     width: 10%;
 }
 
-#tableschedule tr.even{
+#tableschedule tr.even {
     background-color: cornflowerblue;
 }
 
 /*h1 transition*/
-h1{
+h1 {
     transition-property: color;
 }
 
-h1:hover{
+h1:hover {
     background-color: #fff;
     color: lightseagreen;
     transition-delay: 250ms;
 }
 
 /*list image*/
-li{
+li {
     list-style-image: url(../img/star.png);
 }

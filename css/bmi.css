@@ -7,6 +7,7 @@
 div.inputarea {
   background-color: deepskyblue;
 }
+
 /*02 Layout*/
 body {
   margin: 0%;
@@ -18,36 +19,42 @@ body {
   top: 0;
   border-radius: 25px;
 }
+
 #BMIbar {
   position: absolute;
   top: 50px;
   left: 700px;
   z-index: 2;
 }
+
 #lefttext {
   position: absolute;
   top: 60px;
   left: 700px;
   z-index: 3;
 }
+
 #midlefttext {
   position: absolute;
   top: 60px;
   left: 850px;
   z-index: 3;
 }
+
 #midrighttext {
   position: absolute;
   top: 60px;
   left: 1050px;
   z-index: 3;
 }
+
 #righttext {
   position: absolute;
   top: 60px;
   left: 1250px;
   z-index: 3;
 }
+
 #mii {
   position: absolute;
   left: 900px;
@@ -55,6 +62,7 @@ body {
   z-index: 3;
   height: 390px;
 }
+
 #slider {
   position: absolute;
   left: 900px;
@@ -62,6 +70,7 @@ body {
   opacity: 60%;
   z-index: 4;
 }
+
 div.inputarea {
   position: absolute;
   width: 500px;
@@ -69,14 +78,17 @@ div.inputarea {
   padding-bottom: 250px;
   padding-right: 100px;
 }
+
 div.inputarea p {
   margin: 25px auto;
   padding-left: 15px;
 }
+
 /*03 Format*/
 div.inputarea {
   border-radius: 25px;
 }
+
 h1 {
   margin: 15px;
 }
