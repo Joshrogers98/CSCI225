@@ -64,8 +64,8 @@ z-index: 3;
 }
 div.inputarea{
     position: absolute;
-    margin: 25px;
     width: 500px;
+    top: 0;
     padding-bottom: 250px;
     padding-right: 100px;
 }
