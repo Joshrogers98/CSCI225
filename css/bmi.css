@@ -75,8 +75,8 @@ div.inputarea {
   position: absolute;
   width: 500px;
   top: 0;
-  padding-bottom: 250px;
   padding-right: 100px;
+  height: auto;
 }
 
 div.inputarea p {
