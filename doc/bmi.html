@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="../css/bmi.css" />
+</head>
+
+<body>
+    <div class="inputarea">
+        <p>
+            Name: <input type="text" name="userName">
+        </p>
+        <p>
+            Weight: <input type="text" name="weight"> lbs.
+        </p>
+        <p>
+            Height: <input type="text" name="height"> in.
+        </p>
+        <p>Age:
+            <select name="ageSelect">
+                <option value="1">20 below</option>
+                <option value="2">20-30</option>
+                <option value="3">30-50</option>
+                <option value="4">50 above</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Compute BMI">
+        </p>
+        </div>
+        <div class="pictures">
+        <p>
+            <img src="../img/BMIbar.jpg" alt="A green to red bar showing " id="BMIbar"> <br>
+        </p>
+        <p id="lefttext">Underweight</p>
+        <p id="midlefttext">Normalweight</p>
+        <p id="midrighttext">Overweight</p>
+        <p id="righttext">Obese</p>
+        <img src="../img/Mii.jpg" alt="A mii image" id="mii">
+        <img src="../img/slider.png" alt="slider" id="slider">
+    </div>
+</body>
+
+</html>

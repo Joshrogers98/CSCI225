@@ -1,0 +1,41 @@
+/*
+01 Layout
+*/
+
+/*01 Layout*/
+#BMIbar{
+    position: absolute;
+    left: 35%;
+    top: 50px;
+}
+#lefttext{
+position: absolute;
+top: 60px;
+left: 35%;
+}
+#midlefttext{
+position: absolute;
+top: 60px;
+left: 41%;
+}
+#midrighttext{
+position: absolute;
+top: 60px;
+left: 48%;
+}
+#righttext{
+position: absolute;
+top: 60px;
+left: 55%;
+}
+#mii{
+    position: absolute;
+    left: 43%;
+    top: 150px;
+}
+#slider{
+    position: absolute;
+    left: 35%;
+    top: 25px;
+    opacity: 60%;
+}
