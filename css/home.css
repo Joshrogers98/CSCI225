@@ -50,7 +50,7 @@ h1 {
     background-color: lightseagreen;
 }
 
-#portp1{
+li p{
     background-color: indianred;
 }
 
@@ -160,11 +160,6 @@ div.portfolio {
     width: auto;
     padding: 0.1%;
     margin: 0.5%;
-}
-
-#portp1{
-    width: auto;
-    height: 30%;
 }
 
 /*Contact Info*/
@@ -279,7 +274,7 @@ div.introduction {
 /*Rounded Corners to li elements*/
 li {
     border-radius: 25px;
-    margin: 2%;
+    margin: 10px;
 }
 
 /*Rounded Corners to H1 elements*/
@@ -295,8 +290,10 @@ p::first-letter{
 }
 
 /*Box Shadow for first paragraph (Portfolio)*/
-#portp1{
+li p{
+    margin: 10px;
     box-shadow: 2px 4px red;
+    width: 80%;
 }
 
 /*style table with CSS*/
