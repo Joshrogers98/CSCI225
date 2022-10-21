@@ -9,37 +9,191 @@
 
 <body>
     <div class="inputarea">
+        <h1>English BMI Calculator</h1>
+        <!--Name-->
         <p>
-            Name: <input type="text" name="userName">
+            <label for="name">Name: </label> <input type="text" id="name" placeholder="Name">
         </p>
-        <p>
-            Weight: <input type="text" name="weight"> lbs.
+        <p id="welcome">
+
         </p>
-        <p>
-            Height: <input type="text" name="height"> in.
+        <!--Welcome Message-->
+        <script>
+            function welcomeMessage(){
+                var userName = document.getElementById('name').value;
+                document.getElementById('welcome').innerHTML = "hello " + userName + ", thanks for using our BMI calculator.";
+            }
+            document.getElementById('name').addEventListener('blur',welcomeMessage,false)
+        </script>
+        <!--Weight-->
+        <p id="wt">
+            <label for="weight">*Weight: </label> <input type="text" id="weight" placeholder="160"> lbs. (1 - 2,000 lbs.)
         </p>
-        <p>Age:
-            <select name="ageSelect">
+        <p id="wtval"></p>
+        <!--Validate Weight-->
+        <script>
+            function valWeight(){
+            var wtin = parseFloat(document.getElementById('weight').value);
+            console.log("weight = " + wtin);
+            //check for NaN
+            if(wtin !== wtin || wtin < 1 || wtin > 2000){
+                document.getElementById('wtval').textContent = "Input is not a number, less than 1, or above 2,000 please enter a valid number. Your weight has been set to 160.";
+                wtin = 160;
+            }
+            else{
+                document.getElementById('wtval').innerHTML = "weight is set to: " + wtin + " lbs.";
+            }
+            console.log('wt = ' + wtin);
+            document.getElementById('wt').value = wtin;
+            }
+            document.getElementById('weight').addEventListener('blur',valWeight,false);
+        </script>
+        <!--Height-->
+        <p id="ht">
+           <label for="height">*Height: </label><input type="text" id="height" placeholder="70" required> in. (1 - 120 in.)
+        </p>
+        <p id="htval"></p>
+        <!--Validate Hieght-->
+        <script>
+            function valHeight(){
+                var htin = parseFloat(document.getElementById('height').value);
+                console.log("height = "+ htin);
+                if(htin !== htin || htin < 1 || htin > 120){
+                    document.getElementById('htval').textContent = "Input is not a number, less than 1, or above 120 please enter a valid number. Your height has been set to 70in.";
+                    htin = 70;
+                }
+                else{
+                    document.getElementById('htval').innerHTML = "Height is set to: " + htin + " in.";
+                }
+                console.log('ht = ' + htin);
+                document.getElementById('ht').value = htin;
+            }
+            document.getElementById('height').addEventListener('blur',valHeight,false);
+        </script>
+        <!--Age-->
+        <p><label for="age">*Age: </label>
+            <select name="ageSelect" id="age">
+                <option value="0">Select an option</option>
                 <option value="1">20 below</option>
                 <option value="2">20-30</option>
                 <option value="3">30-50</option>
                 <option value="4">50 above</option>
             </select>
         </p>
+        <p id="CDClinks"></p>
+        <!--button-->
         <p>
-            <input type="submit" value="Compute BMI">
+            <input type="submit" value="Compute BMI" id="calcButton">
         </p>
-        </div>
-        <div class="pictures">
-        <p>
-            <img src="../img/BMIbar.jpg" alt="A green to red bar showing " id="BMIbar"> <br>
-        </p>
+        <!--Display links for <20 years old-->
+        <script>
+            function lowage() {
+                var ageIndex = document.getElementById('age').value;
+                if(ageIndex == 1){
+                    document.getElementById('CDClinks').innerHTML = '<a href="https://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf">CDC link boys</a> <a href="https://www.cdc.gov/growthcharts/data/set1clinical/cj41l024.pdf">CDC link girls</a>';
+                }
+            }
+            var ageIndex = document.getElementById('age').value;
+            calcButton.addEventListener('click', lowage, false);
+        </script>
+        <!--Formula for BMI=====((lbs) / [(in)^2]) * 703 & actions-->
+        <script>
+            var bmi = 20;
+            function calcBMI(){
+                //get vars
+                var wt = parseFloat(document.getElementById('wt').value);
+                console.log("BMI Calc weight: " + wt);
+                var ht = parseFloat(document.getElementById('ht').value);
+                console.log("BMI Calc height: " + ht);
+                var ageCheck = document.getElementById('age').value;
+                console.log("Age index value: " + ageCheck);
+                var printBMI = document.getElementById('BMIresult');
+                //start calc
+                if(ht !== ht || wt !== wt){
+                    printBMI.textContent = "Please input a valid height / weight";
+                }else{
+                    if(ageCheck != 0){
+                        var bmifinal = parseFloat((wt / Math.pow(ht,2)) * 703).toFixed(2);
+                        printBMI.innerHTML = "Your BMI is: " + bmifinal + "!";
+                        bmi = bmifinal;
+                    }else{
+                        printBMI.textContent = "Please select an age";
+                    }
+                }
+                console.log("BMI = " + bmifinal);
+                //function for alert overweight/obese
+                if(bmifinal >= 28 && ageCheck != 1){
+                    alert('You are overweight / obese!');
+                    window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                }
+            }
+            document.getElementById('calcButton').addEventListener('click',calcBMI,false);
+            
+        </script>
+        <!--Calculated BMI-->
+        <p id="BMIresult"></p>
+        <p>* = required</p>
+    <!--animations / pictures-->
+    </div>
+    <div class="animated">
+        <!--non - moving-->
+        <p><img src="../img/BMIbar.jpg" alt="A green to red bar showing " id="BMIbar"></p>
+        <img src="../img/swirlBG.jpg" alt="a colorful swirl" id="swirl">
         <p id="lefttext">Underweight</p>
         <p id="midlefttext">Normalweight</p>
         <p id="midrighttext">Overweight</p>
         <p id="righttext">Obese</p>
+        <!--Moving pieces-->
         <img src="../img/Mii.jpg" alt="A mii image" id="mii">
+        <script>
+            //img original: h:354px w:739px
+            function miiscale(){
+                var miiimg = document.getElementById('mii');
+                bmi = 333
+                switch (true) {
+                    case (bmi<18.5):
+                    miiimg.animate([{transform:'scaleX(1)'},{transform:'scaleX(0.75)'}],{duration:1000,fill:'forwards'});
+                        break;
+                    case (bmi < 25):
+                    miiimg.animate([{transform:'scaleX(1)'},{transform:'scaleX(1)'}],{duration:0,fill:'forwards'});
+                        break;
+                    case (bmi<30):
+                    miiimg.animate([{transform:'scaleX(1)'},{transform:'scaleX(1.2)'}],{duration:1000,fill:'forwards'});
+                        break;
+                    case (bmi>=30):
+                    miiimg.animate([{transform:'scaleX(1)'},{transform:'scaleX(1.5)'}],{duration:2000,fill:'forwards'});
+                        break;
+                    default:
+                    miiimg.animate([{transform:'scaleX(1)'},{transform:'scaleX(1)'}],{duration:0,fill:'forwards'});
+                        break;
+                }
+            }
+            document.getElementById('calcButton').addEventListener('click',miiscale,false);
+        </script>
         <img src="../img/slider.png" alt="slider" id="slider">
+        <script>
+            function slider(){
+                var slider = document.getElementById('slider');
+                switch (true) {
+                    case (bmi<18.5):
+                    slider.animate([{transform:'translate(0,0)'},{transform:'translate(-200px, 0)'}],{duration:1000,fill:'forwards'});
+                        break;
+                    case (bmi < 25):
+                    slider.animate([{transform:'translate(0,0)'},{transform:'translate(0, 0)'}],{duration:0,fill:'forwards'});
+                        break;
+                    case (bmi<30):
+                    slider.animate([{transform:'translate(0,0)'},{transform:'translate(175px, 0)'}],{duration:1000,fill:'forwards'});
+                        break;
+                    case (bmi>=30):
+                    slider.animate([{transform:'translate(0,0)'},{transform:'translate(350px, 0)'}],{duration:2000,fill:'forwards'});
+                        break;
+                    default:
+                    slider.animate([{transform:'translate(0,0)'},{transform:'translate(0, 0)'}],{duration:0,fill:'forwards'});
+                        break;
+                }
+            }
+            document.getElementById('calcButton').addEventListener('click',slider,false);
+        </script>
     </div>
 </body>
 

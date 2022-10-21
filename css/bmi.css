@@ -1,41 +1,82 @@
 /*
-01 Layout
+01 color
+02 Layout
+03 Format
 */
+/*01 Color*/
+div.inputarea{
+    background-color: deepskyblue;
+}
+/*02 Layout*/
+body{
+    margin: 0%;
+}
 
-/*01 Layout*/
+#swirl{
+    position: absolute;
+    left: 700px;
+    top: 0;
+    border-radius: 25px;
+}
 #BMIbar{
     position: absolute;
-    left: 35%;
     top: 50px;
+    left: 700px;
+    z-index: 2;
 }
 #lefttext{
 position: absolute;
 top: 60px;
-left: 35%;
+left: 700px;
+z-index: 3;
 }
 #midlefttext{
 position: absolute;
 top: 60px;
-left: 41%;
+left: 850px;
+z-index: 3;
 }
 #midrighttext{
 position: absolute;
 top: 60px;
-left: 48%;
+left: 1050px;
+z-index: 3;
 }
 #righttext{
 position: absolute;
 top: 60px;
-left: 55%;
+left: 1250px;
+z-index: 3;
 }
 #mii{
     position: absolute;
-    left: 43%;
-    top: 150px;
+    left: 900px;
+    top: 200px;
+    z-index: 3;
+    height: 390px;
 }
 #slider{
     position: absolute;
-    left: 35%;
+    left: 900px;
     top: 25px;
     opacity: 60%;
+    z-index: 4;
+}
+div.inputarea{
+    position: absolute;
+    margin: 25px;
+    width: 500px;
+    padding-bottom: 250px;
+    padding-right: 100px;
+}
+div.inputarea p{
+    margin: 25px auto;
+    padding-left: 15px;
+}
+/*03 Format*/
+div.inputarea{
+border-radius: 25px;
+}
+h1{
+    margin: 15px;
 }
