@@ -4,79 +4,79 @@
 03 Format
 */
 /*01 Color*/
-div.inputarea{
-    background-color: deepskyblue;
+div.inputarea {
+  background-color: deepskyblue;
 }
 /*02 Layout*/
-body{
-    margin: 0%;
+body {
+  margin: 0%;
 }
 
-#swirl{
-    position: absolute;
-    left: 700px;
-    top: 0;
-    border-radius: 25px;
+#swirl {
+  position: absolute;
+  left: 700px;
+  top: 0;
+  border-radius: 25px;
 }
-#BMIbar{
-    position: absolute;
-    top: 50px;
-    left: 700px;
-    z-index: 2;
+#BMIbar {
+  position: absolute;
+  top: 50px;
+  left: 700px;
+  z-index: 2;
 }
-#lefttext{
-position: absolute;
-top: 60px;
-left: 700px;
-z-index: 3;
+#lefttext {
+  position: absolute;
+  top: 60px;
+  left: 700px;
+  z-index: 3;
 }
-#midlefttext{
-position: absolute;
-top: 60px;
-left: 850px;
-z-index: 3;
+#midlefttext {
+  position: absolute;
+  top: 60px;
+  left: 850px;
+  z-index: 3;
 }
-#midrighttext{
-position: absolute;
-top: 60px;
-left: 1050px;
-z-index: 3;
+#midrighttext {
+  position: absolute;
+  top: 60px;
+  left: 1050px;
+  z-index: 3;
 }
-#righttext{
-position: absolute;
-top: 60px;
-left: 1250px;
-z-index: 3;
+#righttext {
+  position: absolute;
+  top: 60px;
+  left: 1250px;
+  z-index: 3;
 }
-#mii{
-    position: absolute;
-    left: 900px;
-    top: 200px;
-    z-index: 3;
-    height: 390px;
+#mii {
+  position: absolute;
+  left: 900px;
+  top: 200px;
+  z-index: 3;
+  height: 390px;
 }
-#slider{
-    position: absolute;
-    left: 900px;
-    top: 25px;
-    opacity: 60%;
-    z-index: 4;
+#slider {
+  position: absolute;
+  left: 900px;
+  top: 25px;
+  opacity: 60%;
+  z-index: 4;
 }
-div.inputarea{
-    position: absolute;
-    width: 500px;
-    top: 0;
-    padding-bottom: 250px;
-    padding-right: 100px;
+div.inputarea {
+  position: absolute;
+  width: 500px;
+  top: 0;
+  padding-bottom: 250px;
+  padding-right: 100px;
 }
-div.inputarea p{
-    margin: 25px auto;
-    padding-left: 15px;
+div.inputarea p {
+  margin: 25px auto;
+  padding-left: 15px;
 }
 /*03 Format*/
-div.inputarea{
-border-radius: 25px;
+div.inputarea {
+  border-radius: 25px;
 }
-h1{
-    margin: 15px;
+h1 {
+  margin: 15px;
 }
