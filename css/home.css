@@ -89,7 +89,6 @@ div.navbar {
 
 #navlist li {
     display: inline;
-    width: auto;
     padding: 3px;
     height: 20px;
 
@@ -130,8 +129,8 @@ div.assignment {
     padding: 1% 5%;
     margin: 3%;
     display: grid;
-    width: 90%;
     height: 5%;
+    width: 50%;
 }
 
 #asgnhead{
@@ -157,9 +156,9 @@ div.portfolio {
 }
 
 #portlist li{
-    width: auto;
     padding: 0.1%;
     margin: 0.5%;
+    width: 40%;
 }
 
 /*Contact Info*/
@@ -174,9 +173,9 @@ div.contact {
 }
 
 #contlist li{
-    width: auto;
     padding: 0.1%;
     margin: 1%;
+    width: 20%;
 }
 
 /*Schedule*/
@@ -293,7 +292,7 @@ p::first-letter{
 li p{
     margin: 10px;
     box-shadow: 2px 4px red;
-    width: 80%;
+    width: auto;
 }
 
 /*style table with CSS*/
