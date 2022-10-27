@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Real Estate Calculator</title>
+    <link rel="stylesheet" href="../css/realestate.css">
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <div class="navbar">
+        <ul id="REnavlist">
+            <li>
+                <button id="buyButton">Buy</button>
+            </li>
+            <li>
+                <button id="saleButton">Sale</button>
+            </li>
+            <li>
+                <button id="loanButton">Loan</button>
+            </li>
+            <li>
+                <button id="aboutButton">About</button>
+            </li>
+        </ul>
+        <script>
+            function showCalc() {
+                var loanCalc = document.getElementById('loanCalc');
+                var loanTable = document.getElementById('loanTable');
+                loanCalc.setAttribute("class", "loanCalc");
+                loanTable.setAttribute("class", "loanTable_hide");
+                document.getElementById('monthlyPaymentHeader').textContent = "Monthly Payment:";
+            }
+            document.getElementById('loanButton').addEventListener('click', showCalc, false);
+        </script>
+    </div>
+    <!--Loan Calc Input Area-->
+    <div class="loanCalc" id="loanCalc">
+        <!--Table for inputs to look more clean-->
+        <table>
+            <!--Header-->
+            <tr class="calcThead">
+                <td colspan="3">
+                    <h3>Loan Information</h3>
+                </td>
+            </tr>
+            <!--Loan Amount-->
+            <tr>
+                <td>
+                    <p class="c1">
+                        Loan Amount:
+                    </p>
+                </td>
+                <td>
+                    <input type="number" id="loanAmount" value="150000">
+                </td>
+                <td>
+                    <p class="c3">
+                        $.
+                    </p>
+                </td>
+            </tr>
+            <!--Interest Rate-->
+            <tr>
+                <td>
+                    <p class="c1">
+                        Interest Rate:
+                    </p>
+                <td>
+                    <input type="float" id="interestRate" value="5.5">
+                </td>
+                <td>
+                    <p class="c3">
+                        %.
+                    </p>
+                </td>
+            </tr>
+            <!--Loan Term-->
+            <tr>
+                <td>
+                    <p class="c1">
+                        Loan Term:
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <input type="number" id="loanTerm" value="30">
+                    </p>
+                </td>
+                <td>
+                    <p class="c3">
+                        Years.
+                    </p>
+                </td>
+            </tr>
+            <!--Start Date-->
+            <tr>
+                <td>
+                    <p class="c1">
+                        Start Date:
+                    </p>
+                </td>
+                <td>
+                    <select name="startDate" id="startDateMo">
+                        <option value="Jan">January</option>
+                        <option value="Feb">February</option>
+                        <option value="Mar">March</option>
+                        <option value="Apr">April</option>
+                        <option value="May">May</option>
+                        <option value="Jun">June</option>
+                        <option value="Jul">July</option>
+                        <option value="Aug">August</option>
+                        <option value="Sep">September</option>
+                        <option value="Oct">October</option>
+                        <option value="Nov">November</option>
+                        <option value="Dec">December</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="startDate" id="startDateYr">
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                    </select>
+                </td>
+            </tr>
+            <!--Show Results-->
+            <tr>
+                <td>
+                    <p class="c1">
+                        Show Results By:
+                    </p>
+                </td>
+                <td>
+                    <select name="resultsBy" id="resultsBy">
+                        <option value="years">Years</option>
+                        <option value="months">Months</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <!--Calc Button-->
+        <button id="calcPayChart">Calculate</button>
+        <!--Validation and transition-->
+        <script>
+            function showTable() {
+                var loanCalc = document.getElementById('loanCalc');
+                var loanTable = document.getElementById('loanTable');
+                var amount = parseInt(document.getElementById('loanAmount').value);
+                var interest = parseFloat(document.getElementById('interestRate').value);
+                var term = parseInt(document.getElementById('loanTerm').value);
+                if (amount == amount && interest == interest && term == term) {
+                    loanCalc.setAttribute("class", "loanCalc_hide");
+                    loanTable.setAttribute("class", "loanTable");
+                } else {
+                    alert('Please input proper values');
+                    document.getElementById('loanAmount').value = 150000;
+                    document.getElementById('interestRate').value = 5.5;
+                    document.getElementById('loanTerm').value = 30;
+                }
+            }
+            document.getElementById('calcPayChart').addEventListener('click', showTable, false);
+        </script>
+        <!--Fill table-->
+        <script>
+            function inputTable() {
+                var amount = parseInt(document.getElementById('loanAmount').value);
+                var interest = parseFloat(document.getElementById('interestRate').value);
+                var term = parseInt(document.getElementById('loanTerm').value);
+                var startMo = document.getElementById('startDateMo').value;
+                var startYr = document.getElementById('startDateYr').value;
+                var results = document.getElementById('resultsBy').value;
+                var numOfMonths = term * 12;
+                var newInterest = interest / 100;
+                var monthlyRate = newInterest / 12;
+
+                //calc the monthly payment
+                
+                var monthlyPayment = amount * monthlyRate / (1-Math.pow(1+monthlyRate , -numOfMonths));
+                document.getElementById('monthlyPaymentHeader').textContent += " $" + monthlyPayment.toFixed(2);
+                var monthlyInterestPayment = amount * monthlyRate;
+                var monthlyPrinciplePaid = monthlyPayment - monthlyInterestPayment;
+                var interestPaid = 0;
+                var principlePaid = 0;
+
+                //add values to table
+                if(results === "years"){
+                    for(var i = 1 ; i <= term ; i++){
+                        var year = parseInt(startYr) + i;
+                        for(var j = 1 ; j <= 12 ; j++){
+                            interestPaid += monthlyInterestPayment;
+                            principlePaid += monthlyPrinciplePaid;
+                            amount -= monthlyPayment;
+                        }
+                        document.getElementById('loanTableBody').innerHTML += "<tr><td>" + year + "</td><td>$" + interestPaid.toFixed(2) + "</td><td>$" + principlePaid.toFixed(2) + "</td><td>$" + amount.toFixed(2) + "</td></tr>";
+                    }
+                }else{
+
+                }
+            }
+            document.getElementById('calcPayChart').addEventListener('click', inputTable, false);
+        </script>
+    </div>
+    <!--Loan Info Display Table-->
+    <div class="loanTable_hide" id="loanTable">
+        <h3 id="monthlyPaymentHeader">Monthly Payment:</h3>
+        <table id="loanTable">
+            <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>Interest</td>
+                    <td>Principle</td>
+                    <td>Balance</td>
+                </tr>
+            </thead>
+            <tbody id="loanTableBody">
+
+            </tbody>
+        </table>
+    </div>
+</body>

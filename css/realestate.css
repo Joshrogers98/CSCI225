@@ -1,0 +1,155 @@
+/*
+01 Color / Background
+02 Layout
+03 Font
+04 Other Decoration
+*/
+
+/*01 Color / Background*/
+body{
+    background-image: url(../img/REbackground.jpg);
+    background-size: cover;
+}
+div.navbar{
+    background-color: darkcyan;
+}
+div.navbar button{
+    background-color: darkcyan;
+    border-color: lightseagreen;
+    color: white;
+}
+div.loanCalc{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+div.loanCalc button, .calcThead{
+    background-color: rgba(0, 0, 255, 0.3);
+}   
+div.loanCalc button{
+    border-color: cadetblue;
+}
+div.loanTable table{
+    border-color: gray;
+    background-color: lightskyblue;
+}
+div.loanTable thead{
+    background-color: cornflowerblue;
+}
+/*02 Layout*/
+/*Nav Bar*/
+div.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 400px;
+    height: 60px;
+}
+div.navbar ul{
+    margin: 0;
+    padding: 0;
+}
+div.navbar li{
+    display: inline-block;
+    width: 96px;
+    height: 100%;
+}
+div.navbar button{
+    position: relative;
+    width: 97px;
+    height: 60px;
+    padding: 0;
+}
+/*Loan Calc*/
+div.loanCalc_hide{
+    display: none;
+}
+div.loanCalc{
+    position: absolute;
+    right: 250px;
+    top: 10%;
+    width: 500px;
+}
+div.loanCalc table{
+    width: 100%;
+}
+.calcThead{
+    text-align: center;
+}
+.c1{
+    text-align: right;
+}
+.c3{
+    padding-left: 5px;
+}
+div.loanCalc td{
+    padding: 0;
+}
+div.loanCalc input,select{
+    width: 100%;
+    padding: 0;
+    text-align: right;
+}
+div.loanCalc button{
+    width: 100%;
+    margin-top: 25px;
+}
+/*Table*/
+div.loanTable_hide{
+    display: none;
+}
+div.loanTable{
+    position: absolute;
+    top: 10%;
+    right: 250px;
+}
+div.loanTable h3{
+    text-align: right;
+    margin: 0;
+}
+div.loanTable table{
+    border-spacing: 0;
+    width: 500px;
+}
+div.loanTable thead td{
+    text-align: center;
+    border: cadetblue solid 2px;
+    border-bottom:blue solid 4px;
+}
+div.loanTable tbody td{
+    border: rgb(95, 191, 228) solid 1px;
+}
+div.loanTable tbody tr:nth-child(odd){
+    background-color: aquamarine;
+}
+/*03 Font */
+/*NavBar*/
+div.navbar button{
+    letter-spacing: 2px;
+    font-size: 1.2em;
+}
+/*loan info*/
+.calcThead{
+    letter-spacing: 3px;
+    font-size: 1.3em;
+    color: white;
+}
+div.loanCalc button{
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    color: white;
+}
+/*04 Other Decoration*/
+/*Navbar Buttons*/
+div.navbar button{
+    transition-property: color ;
+}
+div.navbar button:hover{
+    background-color: cadetblue;
+}
+/*Loan Calc button*/
+div.loanCalc button{
+    transition-property: color;
+}
+div.loanCalc button:hover{
+    background-color: dodgerblue;
+}
