@@ -67,7 +67,7 @@
                         Interest Rate:
                     </p>
                 <td>
-                    <input type="float" id="interestRate" placeholder="5.5">
+                    <input type="number" id="interestRate" placeholder="5.5">
                 </td>
                 <td>
                     <p class="c3">
@@ -154,6 +154,9 @@
                         <option value="years">Years</option>
                         <option value="months">Months</option>
                     </select>
+                </td>
+                <td>
+
                 </td>
             </tr>
         </table>
@@ -247,8 +250,8 @@
     </div>
     <!--Loan Info Display Table-->
     <div class="loanTable_hide" id="loanTable">
-        <h3 id="monthlyPaymentHeader"></h3>
-        <table id="loanTable">
+        <h3 id="monthlyPaymentHeader"> Monthly Payment: </h3>
+        <table>
             <thead>
                 <tr>
                     <td>Date</td>
