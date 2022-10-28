@@ -30,13 +30,12 @@
                 var loanTable = document.getElementById('loanTable');
                 loanCalc.setAttribute("class", "loanCalc");
                 loanTable.setAttribute("class", "loanTable_hide");
-                document.getElementById('monthlyPaymentHeader').textContent = "Monthly Payment:";
             }
             document.getElementById('loanButton').addEventListener('click', showCalc, false);
         </script>
     </div>
     <!--Loan Calc Input Area-->
-    <div class="loanCalc" id="loanCalc">
+    <div class="loanCalc_hide" id="loanCalc">
         <!--Table for inputs to look more clean-->
         <table>
             <!--Header-->
@@ -53,7 +52,7 @@
                     </p>
                 </td>
                 <td>
-                    <input type="number" id="loanAmount" value="150000">
+                    <input type="number" id="loanAmount" placeholder="150000">
                 </td>
                 <td>
                     <p class="c3">
@@ -68,7 +67,7 @@
                         Interest Rate:
                     </p>
                 <td>
-                    <input type="float" id="interestRate" value="5.5">
+                    <input type="float" id="interestRate" placeholder="5.5">
                 </td>
                 <td>
                     <p class="c3">
@@ -85,7 +84,7 @@
                 </td>
                 <td>
                     <p>
-                        <input type="number" id="loanTerm" value="30">
+                        <input type="number" id="loanTerm" placeholder="30">
                     </p>
                 </td>
                 <td>
@@ -119,14 +118,16 @@
                 </td>
                 <td>
                     <select name="startDate" id="startDateYr">
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
                         <option value="2012">2012</option>
                         <option value="2013">2013</option>
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -135,11 +136,9 @@
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
-                        <option value="2030">2030</option>
-                        <option value="2031">2031</option>
-                        <option value="2032">2032</option>
+                        <option value="2038">2038</option>
+                        <option value="2039">2039</option>
+                        <option value="2040">2040</option>
                     </select>
                 </td>
             </tr>
@@ -172,18 +171,19 @@
                     loanCalc.setAttribute("class", "loanCalc_hide");
                     loanTable.setAttribute("class", "loanTable");
                 } else {
-                    alert('Please input proper values');
+                    alert('Please input proper values, inputs have been replaced with placeholders!');
                     document.getElementById('loanAmount').value = 150000;
                     document.getElementById('interestRate').value = 5.5;
                     document.getElementById('loanTerm').value = 30;
                 }
                 //reset the table
-                document.getElementById('loanTableBody').innerHTML ="";
+                document.getElementById('loanTableBody').innerHTML = "";
             }
             document.getElementById('calcPayChart').addEventListener('click', showTable, false);
         </script>
         <!--Fill table-->
         <script>
+            //function to make the table
             function inputTable() {
                 var amount = parseInt(document.getElementById('loanAmount').value);
                 var interest = parseFloat(document.getElementById('interestRate').value);
@@ -192,30 +192,53 @@
                 var startYr = document.getElementById('startDateYr').value;
                 var results = document.getElementById('resultsBy').value;
                 var numOfMonths = term * 12;
-                var newInterest = interest / 100;
-                var monthlyRate = newInterest / 12;
+                var monthlyRate = interest / 1200;
 
                 //calc the monthly payment
-                
-                var monthlyPayment = amount * monthlyRate / (1-Math.pow(1+monthlyRate , -numOfMonths));
-                document.getElementById('monthlyPaymentHeader').textContent += " $" + monthlyPayment.toFixed(2);
-                var monthlyInterestPayment = amount * monthlyRate;
-                var monthlyPrinciplePaid = monthlyPayment - monthlyInterestPayment;
-                var interestPaid = 0;
-                var principlePaid = 0;
+
+                var monthlyPayment = amount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -numOfMonths));
+                document.getElementById('monthlyPaymentHeader').textContent = "Monthly Payment: $" + monthlyPayment.toFixed(2);
 
                 //add values to table
-                if(results === "years"){
-                    for(var i = 1 ; i <= term ; i++){
+                //display in years
+                if (results === "years") {
+                    for (var i = 1; i <= term; i++) {
+                        var interestPaid = 0;
+                        var principlePaid = 0;
                         var year = parseInt(startYr) + i;
-                        for(var j = 1 ; j <= 12 ; j++){
-                            interestPaid += monthlyInterestPayment;
-                            principlePaid += monthlyPrinciplePaid;
-                            amount -= monthlyPayment;
+                        for (var j = 0; j < 12; j++) {
+                            var newMonthlyPayment = amount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -numOfMonths));
+                            var interestCalc = amount * monthlyRate;
+                            var principleCalc = newMonthlyPayment - interestCalc;
+                            var amountCalc = amount - principleCalc;
+                            interestPaid += interestCalc;
+                            principlePaid += principleCalc;
+                            amount = amountCalc;
+                            numOfMonths -= 1;
                         }
                         document.getElementById('loanTableBody').innerHTML += "<tr><td>" + year + "</td><td>$" + interestPaid.toFixed(2) + "</td><td>$" + principlePaid.toFixed(2) + "</td><td>$" + amount.toFixed(2) + "</td></tr>";
                     }
-                }else{
+                    //display in months
+                } else {
+                    var monthsArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    var interestPaid = 0;
+                    var principlePaid = 0;
+                    for (let i = 1; i <= term; i++) {
+                        var interestPaid = 0;
+                        var principlePaid = 0;
+                        var year = parseInt(startYr) + i;
+                        for (var j = 0; j < 12; j++) {
+                            var newMonthlyPayment = amount * monthlyRate / (1 - Math.pow(1 + monthlyRate, -numOfMonths));
+                            var interestCalc = amount * monthlyRate;
+                            var principleCalc = newMonthlyPayment - interestCalc;
+                            var amountCalc = amount - principleCalc;
+                            interestPaid += interestCalc;
+                            principlePaid += principleCalc;
+                            amount = amountCalc;
+                            numOfMonths -= 1;
+                            document.getElementById('loanTableBody').innerHTML += "<tr><td>" + monthsArray[j] + ' ' + year + "</td><td>$" + interestCalc.toFixed(2) + "</td><td>$" + principleCalc.toFixed(2) + "</td><td>$" + amount.toFixed(2) + "</td></tr>";
+                        }
+                    }
 
                 }
             }
@@ -224,7 +247,7 @@
     </div>
     <!--Loan Info Display Table-->
     <div class="loanTable_hide" id="loanTable">
-        <h3 id="monthlyPaymentHeader">Monthly Payment:</h3>
+        <h3 id="monthlyPaymentHeader"></h3>
         <table id="loanTable">
             <thead>
                 <tr>

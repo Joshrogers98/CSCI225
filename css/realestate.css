@@ -116,6 +116,7 @@ div.loanTable thead td{
     border-bottom:blue solid 4px;
 }
 div.loanTable tbody td{
+    text-align: center;
     border: rgb(95, 191, 228) solid 1px;
 }
 div.loanTable tbody tr:nth-child(odd){
